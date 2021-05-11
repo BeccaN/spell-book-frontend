@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import SpellInfo from './components/SpellInfo'
 import SpellContainer from './components/SpellContainer';
-import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {Button} from 'react-bootstrap';
 
 export default function App() {
   
@@ -16,12 +17,12 @@ export default function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Button>Testing</Button>
+    <div className="container">
       <header>
         <h1>Spell Journal</h1>
       </header>
-      <div className="content">
+      <div className="row">
+
         <SpellContainer spells={spells} />
         <SpellInfo />
       </div>
