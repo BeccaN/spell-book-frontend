@@ -15,10 +15,7 @@ export default function App() {
   }, [])
 
   const handleSelect = (data) => {
-    console.log(data)
     setSelectedSpell(data)
-    // selected spell data gets added to selectedSpell state
-    // selected spell state is passed to SpellInfo component 
   }
 
   return (
