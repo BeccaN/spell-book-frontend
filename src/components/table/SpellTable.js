@@ -20,8 +20,7 @@ const SpellTable = (props) => {
     headerGroups, 
     footerGroups,
     rows, 
-    prepareRow,
-    selectedFlatRows
+    prepareRow
   } = useTable({
     columns,
     data,
@@ -32,8 +31,6 @@ const SpellTable = (props) => {
   useSortBy,
   useRowSelect
   )
-
-
 
   return (
     <>
