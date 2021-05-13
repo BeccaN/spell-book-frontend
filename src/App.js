@@ -4,6 +4,7 @@ import SpellContainer from './components/SpellContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {connect} from 'react-redux'
 import { fetchSpells } from './actions/fetchSpells'
+import Navbar from './components/Navbar'
 
 function App() {
   const [selectedSpell, setSelectedSpell] = useState(null)
@@ -14,11 +15,9 @@ function App() {
 
   return (
     <div className="mx-4">
-      <header>
-        <h1>Spell Journal</h1>
-      </header>
+      <Navbar />
+
       <div className="row">
-        {}
         <SpellContainer handleSelect={handleSelect}/>
         <SpellInfo selectedSpell={selectedSpell} />
       </div>

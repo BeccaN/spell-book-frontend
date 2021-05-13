@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SpellInfo(props) {
   return (
-    <div className='col-md border p-3 m-2 bg-light shadow h-100'>
+    <div className='col-md border p-3 m-2 bg-light shadow h-100 sticky-top'>
         {props.selectedSpell != null ? (
         <div class="container">
           <h3>Spell Info</h3>
@@ -35,7 +35,7 @@ export default function SpellInfo(props) {
               Components: <strong>{props.selectedSpell.components}</strong>
             </div>
             <div class="col">
-              Materials: <strong>{props.selectedSpell.material}</strong>
+              Materials: <strong><div dangerouslySetInnerHTML={{__html: props.selectedSpell.material}} /></strong>
             </div>
           </div>
           <div class="row">
