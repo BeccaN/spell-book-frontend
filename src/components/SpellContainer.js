@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import SpellTable from './table/SpellTable'
 
-export default class SpellContainer extends Component {
+class SpellContainer extends Component {
     render() {
         return (
             <div className='col-md p-3 m-2 border bg-light shadow'>
@@ -12,3 +13,5 @@ export default class SpellContainer extends Component {
         )
     }
 }
+
+export default SpellContainer
