@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import spells from './spellReducer';
+import spell_books from './spellBookReducer'
 
 export default combineReducers({
-  spells
+  spells,
+  spell_books
 });
