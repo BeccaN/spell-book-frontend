@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import SpellTable from './table/SpellTable'
+import SpellTable from '../table/SpellTable'
 import { fetchSpells } from '../actions/fetchSpells'
 
 class SpellContainer extends Component {

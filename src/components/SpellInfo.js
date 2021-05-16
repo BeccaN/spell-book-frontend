@@ -2,61 +2,57 @@ import React from 'react'
 
 export default function SpellInfo(props) {
   return (
-    <div className='col-md border p-3 m-2 bg-light shadow h-100 sticky-top'>
-        {props.selectedSpell != null ? (
-        <div class="container">
-          <h3>Spell Info</h3>
-          <div class="row">
-            <div class="col">
-              Spell: <strong>{props.selectedSpell.name}</strong>
-            </div>
-            <div class="col">
-              Level: <strong>{props.selectedSpell.level}</strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              Classes: <strong>{props.selectedSpell.dnd_class}</strong>
-            </div>
-            <div class="col">
-              School: <strong>{props.selectedSpell.school}</strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              Casting Time: <strong>{props.selectedSpell.casting_time}</strong>
-            </div>
-            <div class="col">
-              Duration: <strong>{props.selectedSpell.duration}</strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              Components: <strong>{props.selectedSpell.components}</strong>
-            </div>
-            <div class="col">
-              Materials: <strong><div dangerouslySetInnerHTML={{__html: props.selectedSpell.material}} /></strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              Concentration: <strong>{props.selectedSpell.concentration}</strong>
-            </div>
-            <div class="col">
-              Ritual: <strong>{props.selectedSpell.ritual}</strong>
-            </div>
-          </div>
-          
-          <div className="mt-2">        
-            Description: <div dangerouslySetInnerHTML={{__html: props.selectedSpell.desc}} />
-            <div dangerouslySetInnerHTML={{__html: props.selectedSpell.higher_lvl}} />
-          </div>
-      
-          <div>
-            <small>Book Page: {props.selectedSpell.page}</small>
-          </div>
+    <div className="container">
+      <h3>Spell Info</h3>
+      <div className="row">
+        <div className="col">
+          Spell: <strong>{props.spell.name}</strong>
         </div>
-        ) : null}
+        <div className="col">
+          Level: <strong>{props.spell.level}</strong>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          classNamees: <strong>{props.spell.dnd_className}</strong>
+        </div>
+        <div className="col">
+          School: <strong>{props.spell.school}</strong>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          Casting Time: <strong>{props.spell.casting_time}</strong>
+        </div>
+        <div className="col">
+          Duration: <strong>{props.spell.duration}</strong>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          Components: <strong>{props.spell.components}</strong>
+        </div>
+        <div className="col">
+          Materials: <strong><div dangerouslySetInnerHTML={{__html: props.spell.material}} /></strong>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          Concentration: <strong>{props.spell.concentration}</strong>
+        </div>
+        <div className="col">
+          Ritual: <strong>{props.spell.ritual}</strong>
+        </div>
+      </div>
+      
+      <div classNameName="mt-2">        
+        Description: <div dangerouslySetInnerHTML={{__html: props.spell.desc}} />
+        <div dangerouslySetInnerHTML={{__html: props.spell.higher_lvl}} />
+      </div>
+  
+      <div>
+        <small>Book Page: {props.spell.page}</small>
+      </div>
     </div>
   )
 }

@@ -1,28 +1,25 @@
-import React, {useState} from 'react';
-import SpellInfo from './components/SpellInfo'
-import SpellContainer from './components/SpellContainer';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {connect} from 'react-redux'
-import { fetchSpells } from './actions/fetchSpells'
+import { Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar'
+import SpellsContainer from './containers/SpellsContainer'
+import SpellBooksContainer from './containers/SpellBooksContainer'
+
+import SpellBooks from './components/SpellBooks';
+import SpellBookShow from './components/SpellBookShow'
 
 function App() {
-  const [selectedSpell, setSelectedSpell] = useState(null)
-
-  const handleSelect = (data) => {
-    setSelectedSpell(data)
-  }
 
   return (
     <div className="mx-4">
       <Navbar />
-
-      <div className="row">
-        <SpellContainer handleSelect={handleSelect}/>
-        <SpellInfo selectedSpell={selectedSpell} />
-      </div>
+      <Route exact path="/" component={SpellsContainer} />
+      <SpellBooksContainer />
+      {/* If passing props into Route, change component to render function {() => <SpellBooks books={this.props.books} />} */}
     </div>
+    
   )
 }
 
-export default connect(null, {fetchSpells})(App)
+export default App
