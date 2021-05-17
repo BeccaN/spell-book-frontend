@@ -6,8 +6,7 @@ import {deleteSpellSpellBook} from '../actions/deleteSpellSpellBook'
 class DeleteSpellInput extends Component {
   
   handleClick = (e) => {
-    
-    this.props.deleteSpellSpellBook(this.props.spell_spell_book[0])
+    this.props.deleteSpellSpellBook(this.props.join_id)
   }
   
   render() {

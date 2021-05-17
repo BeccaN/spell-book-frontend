@@ -6,7 +6,7 @@ export default function SpellInfo(props) {
     <div className="container" key={props.spell.id}>
       <div className="d-flex justify-content-between">
         <h3>{props.spell.name}</h3>
-        <DeleteSpellInput spell={props.spell} spell_spell_book={props.spell_spell_book} />
+        <DeleteSpellInput spell={props.spell} join_id={props.join_id} />
       </div>
       <div className="row">
         <div className="col">

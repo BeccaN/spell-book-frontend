@@ -3,7 +3,7 @@ import CreateSpellBook from './forms/CreateSpellBook'
 import {Link} from 'react-router-dom'
 
 class SpellBooksContainer extends Component {
-  
+
   render() {
     return (
       <div>

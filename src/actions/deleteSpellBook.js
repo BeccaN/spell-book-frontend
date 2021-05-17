@@ -1,6 +1,6 @@
-export const deleteSpellSpellBook = (data) => {
+export const deleteSpellBook = (data) => {
   return (dispatch)  => {
-    const apiUrl = `http://localhost:8000/api/v1/spell_spell_books/${data}`
+    const apiUrl = `http://localhost:8000/api/v1/spell_books/${data}`
     
     fetch (apiUrl, {
       headers: {
@@ -12,6 +12,6 @@ export const deleteSpellSpellBook = (data) => {
       .then((resp) => resp.json())
       .then((resp) => (
         console.log(resp),
-        dispatch({type: "DELETE_SPELL_SPELL_BOOK", data})))
+        dispatch({type: "DELETE_SPELL_BOOK", data})))
   }
 }
