@@ -6,9 +6,6 @@ import Navbar from './components/Navbar'
 import SpellsContainer from './containers/SpellsContainer'
 import SpellBooksContainer from './containers/SpellBooksContainer'
 
-import SpellBooks from './components/SpellBooks';
-import SpellBookShow from './components/SpellBookShow'
-
 function App() {
 
   return (
@@ -16,9 +13,7 @@ function App() {
       <Navbar />
       <Route exact path="/" component={SpellsContainer} />
       <SpellBooksContainer />
-      {/* If passing props into Route, change component to render function {() => <SpellBooks books={this.props.books} />} */}
     </div>
-    
   )
 }
 
