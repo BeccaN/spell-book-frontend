@@ -1,4 +1,4 @@
-export const signupUser = (data) => {
+export const signupUser = (userObj) => {
   return (dispatch)  => {
     const apiUrl = 'http://localhost:8000/api/v1/users'
     fetch (apiUrl, {
@@ -7,7 +7,7 @@ export const signupUser = (data) => {
         'Accept': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify(data)
+      body: JSON.stringify({user: userObj})
     })
       .then((resp) => resp.json())
       .then(console.log)
