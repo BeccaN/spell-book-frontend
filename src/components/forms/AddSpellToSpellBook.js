@@ -14,10 +14,6 @@ class AddSpellForm extends Component {
   }
 
   handleClick = () => {
-    // this.setState({
-    //   spell_id: this.props.spell.id
-    // })
-    console.log({spell_book_id: this.state.spell_book_id, spell_id: this.props.spell})
     this.props.addSpellSpellBook({spell_book_id: this.state.spell_book_id, spell_id: this.props.spell.id})
   }
   
