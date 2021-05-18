@@ -9,7 +9,7 @@ export default function spellSpellBookReducer(state = {spell_spell_books: []}, a
       return {...state, spell_spell_books: filteredState}
     }
     case 'ADD_SPELL_SPELL_BOOK': {
-      return {...state, spell_spell_books: [...state.spell_spell_books, action.payload.spell_spell_book]}
+      return {...state, spell_spell_books: [...state.spell_spell_books, action.payload[0]]}
     }
     default:
       return state

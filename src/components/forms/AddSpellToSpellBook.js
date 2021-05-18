@@ -5,7 +5,7 @@ import {addSpellSpellBook} from '../../actions/addSpellSpellBook'
 class AddSpellForm extends Component {
   state = {
     spell_book_id: null,
-    spell_id: this.props.spell.id
+    spell_id: null
   }
 
   handleChange = (e) => {
@@ -16,6 +16,13 @@ class AddSpellForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+
+    this.setState({
+      spell_id: this.props.spell.id
+    })
+
+    debugger;
+
     this.props.addSpellSpellBook(this.state)
   }
   
