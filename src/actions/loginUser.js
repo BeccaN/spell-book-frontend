@@ -14,3 +14,5 @@ export const loginUser = (userObj) => {
       .then(console.log)
   }
 }
+
+//.then(data => set data to redux store for user?, redirect)

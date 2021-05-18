@@ -1,36 +1,33 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import {signupUser} from '../actions/signupUser'
+import {useHistory} from 'react-router-dom'
 
-class Signup extends Component {
-  state = {
-    username: "", 
-    email: "", 
-    password: ""
-  }
+function Signup(props) {
+  const[username, setUsername] = useState("")
+  const[email, setEmail] = useState("")
+  const[password, setPassword] = useState("")
 
-  changeHandler = (e) => {
-    this.setState({[e.target.name]: e.target.value})
-  }
+  let history = useHistory()
 
-  submitHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault()
-    this.props.signupUser(this.state)
+    props.signupUser({username: username, email: email, password: password})
+    history.push('/')
   }
-  
-  render() {
+
     return (
       <div>
         <h3>Signup Form</h3>
-        <form onSubmit={this.submitHandler}>
-          <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.changeHandler} /><br />
-          <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.changeHandler} /><br />
-          <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.changeHandler} /><br />
+        <form onSubmit={submitHandler}>
+          <input type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
+          <input type="text" name="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
+          <input type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
           <input type="submit" value="signup" />
         </form>
       </div>
     )
-  }
+
 }
 
 export default connect(null, {signupUser})(Signup)
