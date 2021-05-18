@@ -10,10 +10,10 @@ export const deleteSpellSpellBook = (data) => {
       method: 'DELETE'
     })
       .then((resp) => resp.json())
-      .then((resp) => (
-        console.log(resp),
-        dispatch({type: "DELETE_SPELL_SPELL_BOOK", data}),
+      .then((resp) => {
+        console.log(resp)
+        dispatch({type: "DELETE_SPELL_SPELL_BOOK", data})
         dispatch({type: "UPDATE_SPELL_BOOK_SPELLS", data})
-      ))
+      })
   }
 }

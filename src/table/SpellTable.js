@@ -6,7 +6,7 @@ import './table.css'
 
 const SpellTable = (props) => {
   const columns = useMemo(() => COLUMNS, [])
-  const data = useMemo(() => props.spells, [])
+  const data = useMemo(() => props.spells, [props.spells])
   
   const defaultColumn = useMemo(() => {
     return {
@@ -54,9 +54,9 @@ const SpellTable = (props) => {
         {rows.map(row => {
           prepareRow(row)
           return (
-            <tr {...row.getRowProps()} key={row.original.id} onClick={() => props.handleSelect(row.original)}>
+            <tr {...row.getRowProps()} onClick={() => props.handleSelect(row.original)}>
               {row.cells.map((cell) => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  return <td {...cell.getCellProps()} >{cell.render('Cell')}</td>
                 })}
             </tr>
           )

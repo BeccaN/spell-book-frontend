@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {addSpellSpellBook} from '../../actions/addSpellSpellBook'
 
-class AddSpellForm extends Component {
+class AddSpellToSpellBook extends Component {
   state = {
     spell_book_id: null
   }
@@ -22,7 +22,7 @@ class AddSpellForm extends Component {
       <div className="container mt-3">
         <select name="spell_book" id="spell_book" onChange={this.handleChange}>
           <option value="none" selected disabled hidden>Select Spell Book</option>
-          {this.props.spell_books.map(book => <option value={book.id}>{book.title}</option>)}
+          {this.props.spell_books.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
         </select>
         <button type="Submit" className="btn btn-primary btn-sm" onClick={this.handleClick}>+ Spell to Book</button>
       </div>
@@ -36,12 +36,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {addSpellSpellBook})(AddSpellForm)
-
-{/* <form onSubmit={this.handleSubmit}>
-<select name="spell_book" id="spell_book" onChange={this.handleChange}>
-  <option value="none" selected disabled hidden>Select Spell Book</option>
-  {this.props.spell_books.map(book => <option value={book.id}>{book.title}</option>)}
-</select>
-<button type="Submit" className="btn btn-primary btn-sm">+ Spell to Book</button>
-</form> */}
+export default connect(mapStateToProps, {addSpellSpellBook})(AddSpellToSpellBook)

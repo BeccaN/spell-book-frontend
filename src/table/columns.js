@@ -20,7 +20,3 @@ export const COLUMNS = [
     accessor: "school"
   }
 ]
-
-export default {
-  COLUMNS
-}
