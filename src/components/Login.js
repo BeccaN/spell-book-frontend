@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {signupUser} from '../actions/signupUser'
+import {loginUser} from '../actions/loginUser'
 
-class Signup extends Component {
+class Login extends Component {
   state = {
     username: "", 
-    email: "", 
     password: ""
   }
 
@@ -15,22 +14,21 @@ class Signup extends Component {
 
   submitHandler = (e) => {
     e.preventDefault()
-    this.props.signupUser(this.state)
+    this.props.loginUser(this.state)
   }
   
   render() {
     return (
       <div>
-        <h3>Signup Form</h3>
+        <h3>Login Form</h3>
         <form onSubmit={this.submitHandler}>
           <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.changeHandler} /><br />
-          <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.changeHandler} /><br />
           <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.changeHandler} /><br />
-          <input type="submit" value="signup" />
+          <input type="submit" value="login" />
         </form>
       </div>
     )
   }
 }
 
-export default connect(null, {signupUser})(Signup)
+export default connect(null, {loginUser})(Login)

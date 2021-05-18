@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import SpellsContainer from './containers/SpellsContainer'
 import SpellBooksContainer from './containers/SpellBooksContainer'
 import Signup from './components/Signup'
+import Login from './components/Login'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Route exact path="/" component={SpellsContainer} />
       <Route exact path="/signup" component={Signup} />
+      <Route exact path="/login" component={Login} />
       <SpellBooksContainer />
     </div>
   )
