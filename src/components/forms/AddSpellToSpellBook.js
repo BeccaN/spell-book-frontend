@@ -4,8 +4,7 @@ import {addSpellSpellBook} from '../../actions/addSpellSpellBook'
 
 class AddSpellForm extends Component {
   state = {
-    spell_book_id: null,
-    spell_id: null
+    spell_book_id: null
   }
 
   handleChange = (e) => {
@@ -14,28 +13,22 @@ class AddSpellForm extends Component {
     })
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-
-    this.setState({
-      spell_id: this.props.spell.id
-    })
-
-    debugger;
-
-    this.props.addSpellSpellBook(this.state)
+  handleClick = () => {
+    // this.setState({
+    //   spell_id: this.props.spell.id
+    // })
+    console.log({spell_book_id: this.state.spell_book_id, spell_id: this.props.spell})
+    this.props.addSpellSpellBook({spell_book_id: this.state.spell_book_id, spell_id: this.props.spell.id})
   }
   
   render() {
     return (
       <div className="container mt-3">
-        <form onSubmit={this.handleSubmit}>
-          <select name="spell_book" id="spell_book" onChange={this.handleChange}>
-            <option value="none" selected disabled hidden>Select Spell Book</option>
-            {this.props.spell_books.map(book => <option value={book.id}>{book.title}</option>)}
-          </select>
-          <button type="Submit" className="btn btn-primary btn-sm">+ Spell to Book</button>
-        </form>
+        <select name="spell_book" id="spell_book" onChange={this.handleChange}>
+          <option value="none" selected disabled hidden>Select Spell Book</option>
+          {this.props.spell_books.map(book => <option value={book.id}>{book.title}</option>)}
+        </select>
+        <button type="Submit" className="btn btn-primary btn-sm" onClick={this.handleClick}>+ Spell to Book</button>
       </div>
     )
   }
@@ -48,3 +41,11 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {addSpellSpellBook})(AddSpellForm)
+
+{/* <form onSubmit={this.handleSubmit}>
+<select name="spell_book" id="spell_book" onChange={this.handleChange}>
+  <option value="none" selected disabled hidden>Select Spell Book</option>
+  {this.props.spell_books.map(book => <option value={book.id}>{book.title}</option>)}
+</select>
+<button type="Submit" className="btn btn-primary btn-sm">+ Spell to Book</button>
+</form> */}
