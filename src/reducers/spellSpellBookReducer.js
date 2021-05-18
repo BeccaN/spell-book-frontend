@@ -1,7 +1,7 @@
-export default function spellSpellBookReducer(state = {spell_spell_books: []}, action) {
+export default function spellSpellBookReducer(state = {spell_spell_books: [], error: ""}, action) {
   switch(action.type) {
     case 'FETCH_SPELL_SPELL_BOOKS': {
-      return {spell_spell_books: action.payload}
+      return {...state, spell_spell_books: action.payload}
     }
     case 'DELETE_SPELL_SPELL_BOOK': {
       
@@ -10,6 +10,9 @@ export default function spellSpellBookReducer(state = {spell_spell_books: []}, a
     }
     case 'ADD_SPELL_SPELL_BOOK': {
       return {...state, spell_spell_books: [...state.spell_spell_books, action.payload[0]]}
+    }
+    case 'SPELL_SPELL_BOOK_ERROR': {
+      return {...state, error: action.payload.error}
     }
     default:
       return state

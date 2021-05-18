@@ -21,12 +21,13 @@ function SpellBookShowFunc(props) {
   return (
     <div>
       <div className="d-flex">
-        {spell_book ? <h1>{spell_book.title}</h1> : null}
+        {spell_book ? <><h1>{spell_book.title}</h1></>
+        : null}
       </div>
       {spell_book ? 
         <>
         <div className="spells">
-          {spells.map(spell => <div className="spell" key={spell.id}><SpellInfo spell={spell} spell_book_id={spell_book.id} spell_spell_books={this.props.spell_spell_books} /></div>)}
+          {spells.map(spell => <div className="spell" key={spell.id}><SpellInfo spell={spell} spell_book_id={spell_book.id} spell_spell_books={props.spell_spell_books} /></div>)}
         </div>
       
         <div>
