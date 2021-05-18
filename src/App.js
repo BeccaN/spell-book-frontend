@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import SpellsContainer from './containers/SpellsContainer'
 import SpellBooksContainer from './containers/SpellBooksContainer'
+import Signup from './components/Signup'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <div className="mx-4">
       <Navbar />
       <Route exact path="/" component={SpellsContainer} />
+      <Route exact path="/signup" component={Signup} />
       <SpellBooksContainer />
     </div>
   )

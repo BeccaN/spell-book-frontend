@@ -7,7 +7,8 @@ export default function Navbar() {
       <nav>
         <h1>Spell Book App</h1>
         <NavLink to="/" exact>Spells</NavLink>{" | "}
-        <NavLink to="/spellbooks" exact>Spell Books</NavLink>
+        <NavLink to="/spellbooks" exact>Spell Books</NavLink>{" | "}
+        <NavLink to="/signup" exact>Signup</NavLink>
       </nav>
     </div>
   )
