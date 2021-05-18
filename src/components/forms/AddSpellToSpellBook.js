@@ -24,7 +24,7 @@ class AddSpellForm extends Component {
       <div className="container mt-3">
         <form onSubmit={this.handleSubmit}>
           <select name="spell_book" id="spell_book" onChange={this.handleChange}>
-            <option value="none" defaultValue disabled hidden>Select Spell Book</option>
+            <option value="none" selected disabled hidden>Select Spell Book</option>
             {this.props.spell_books.map(book => <option value={book.id}>{book.title}</option>)}
           </select>
           <button type="Submit" className="btn btn-primary btn-sm">+ Spell to Book</button>

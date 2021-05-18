@@ -10,6 +10,10 @@ export const addSpellSpellBook = (data) => {
       body: JSON.stringify(data)
     })
       .then((resp) => resp.json())
-      .then((data) => dispatch({type: "UPDATE_SPELL_BOOK", payload: data}))
+      .then((data) => (
+        dispatch({type: "ADD_SPELL_SPELL_BOOK", payload: data}),
+        dispatch({type: "UPDATE_SPELL_BOOK", payload: data})
+      ))
+  
   }
 }
