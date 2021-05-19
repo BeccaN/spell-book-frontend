@@ -21,13 +21,11 @@ function App() {
         headers: {Authorization: `Bearer ${token}`},
       })
       .then ((resp) => resp.json())
-      .then ((data) => console.log(data))
+      .then ((data) => console.log("useEffect in App", data))
     } else {
       history.push('/')
     }
-  }, [])
-
-
+  }, [history])
 
   return (
     <div className="mx-4">

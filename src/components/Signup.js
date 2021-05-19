@@ -12,8 +12,7 @@ function Signup(props) {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    props.signupUser({username: username, email: email, password: password})
-    history.push('/')
+    props.signupUser({username: username, email: email, password: password}, history)
   }
 
   return (

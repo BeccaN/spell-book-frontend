@@ -11,8 +11,7 @@ function Login(props) {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    props.loginUser({username: username, password: password})
-    history.push('/')
+    props.loginUser({username: username, password: password}, history)
   }
 
   return (

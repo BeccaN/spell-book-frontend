@@ -1,4 +1,4 @@
-export const deleteSpellBook = (data) => {
+export const deleteSpellBook = (data, history) => {
   return (dispatch)  => {
     const apiUrl = `http://localhost:8000/api/v1/spell_books/${data}`
     
@@ -10,6 +10,10 @@ export const deleteSpellBook = (data) => {
       method: 'DELETE'
     })
       .then((resp) => resp.json())
-      .then((resp) => dispatch({type: "DELETE_SPELL_BOOK", data}))
+      .then((resp) => {
+      dispatch({type: "DELETE_SPELL_BOOK", data});
+      history.push('/spellbooks')
+      })
   }
 }
+

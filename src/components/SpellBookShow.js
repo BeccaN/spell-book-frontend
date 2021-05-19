@@ -14,8 +14,7 @@ function SpellBookShowFunc(props) {
   let history = useHistory()
   
   const handleClick = (e) => {
-    props.deleteSpellBook(e.target.value)
-    history.push('/spellbooks')
+    props.deleteSpellBook(e.target.value, history)
   }
 
   return (
