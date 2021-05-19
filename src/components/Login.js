@@ -15,17 +15,16 @@ function Login(props) {
     history.push('/')
   }
 
-    return (
-      <div>
-        <h3>Login Form</h3>
-        <form onSubmit={submitHandler}>
-          <input type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
-          <input type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-          <input type="submit" value="login" />
-        </form>
-      </div>
-    )
-
+  return (
+    <div>
+      <h3>Login Form</h3>
+      <form onSubmit={submitHandler}>
+        <input type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
+        <input type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+        <input type="submit" value="login" />
+      </form>
+    </div>
+  )
 }
 
 export default connect(null, {loginUser})(Login)

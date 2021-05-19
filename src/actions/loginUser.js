@@ -11,8 +11,9 @@ export const loginUser = (userObj) => {
       body: JSON.stringify({user: userObj})
     })
       .then((resp) => resp.json())
-      .then(console.log)
+      .then((data) => {
+        //set state for user
+        localStorage.setItem("token", data.jwt)
+      })
   }
 }
-
-//.then(data => set data to redux store for user?, redirect)

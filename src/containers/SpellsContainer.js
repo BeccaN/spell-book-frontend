@@ -4,6 +4,7 @@ import SpellInfo from '../components/SpellInfo'
 import AddSpellToSpellBook from '../components/forms/AddSpellToSpellBook'
 import SpellTable from '../table/SpellTable'
 
+
 import { fetchSpells } from '../actions/fetchSpells'
 
 class SpellsContainer extends Component {

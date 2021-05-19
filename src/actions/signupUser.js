@@ -10,6 +10,5 @@ export const signupUser = (userObj) => {
       body: JSON.stringify({user: userObj})
     })
       .then((resp) => resp.json())
-      .then(console.log)
   }
 }
