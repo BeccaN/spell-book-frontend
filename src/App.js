@@ -1,41 +1,46 @@
-import React, {useEffect} from 'react';
+import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route } from 'react-router-dom';
-import {useHistory} from 'react-router-dom'
+import { connect } from 'react-redux';
 
 import Navbar from './components/Navbar'
 import SpellsContainer from './containers/SpellsContainer'
 import SpellBooksContainer from './containers/SpellBooksContainer'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import {tokenCheck} from './actions/tokenCheck'
+import {logoutUser} from './actions/logoutUser'
 
-function App() {
-
-  let history = useHistory()
-
-  useEffect(() => {
+class App extends Component {
+  
+  componentDidMount() {
     const token = localStorage.getItem("token")
-    if (token) {
-      fetch("http://localhost:8000/api/v1/profile", {
-        method: "GET",
-        headers: {Authorization: `Bearer ${token}`},
-      })
-      .then ((resp) => resp.json())
-      .then ((data) => console.log("useEffect in App", data))
-    } else {
-      history.push('/')
-    }
-  }, [history])
+    this.props.tokenCheck(token)
+  }
 
-  return (
-    <div className="mx-4">
-      <Navbar />
-      <Route exact path="/" component={SpellsContainer} />
-      <Route exact path="/signup" component={Signup} />
-      <Route exact path="/login" component={Login} />
-      <SpellBooksContainer />
-    </div>
-  )
+  logOutHandler = () => {
+    localStorage.removeItem("token")
+    //redirect
+    this.props.logoutUser()
+  }
+
+  render() {
+    return (
+      <div className="mx-4">
+        <Navbar user={this.props.user} logOutHandler={this.logOutHandler}/>
+        <Route exact path="/" component={SpellsContainer} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/login" component={Login} />
+        <SpellBooksContainer />
+      </div>
+    )
+  }
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    user: state.user.user
+  }
+}
+
+export default connect(mapStateToProps, {tokenCheck, logoutUser})(App)

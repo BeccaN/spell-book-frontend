@@ -12,9 +12,9 @@ export const signupUser = (userObj, history) => {
       .then((resp) => resp.json())
       .then((data) => {
         if (!data.error) {
-          localStorage.setItem("token", data.jwt)
-          // dispatch action to set user into store
-          history.push('/')
+          localStorage.setItem("token", data.jwt);
+          dispatch({ type: 'ADD_USER', payload: data });
+          history.push('/');
         } else {
           console.log(data.error)
           //dispatch action to set error to reducer
