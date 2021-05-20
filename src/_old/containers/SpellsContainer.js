@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SpellInfo from '../components/SpellInfo'
-import AddSpellToSpellBook from '../components/AddSpellToSpellBook'
+import AddSpellToSpellBook from '../components/forms/AddSpellToSpellBook'
 import SpellTable from '../table/SpellTable'
 
 
@@ -32,9 +32,7 @@ class SpellsContainer extends Component {
           {this.state.selectedSpell != null ? (
             <>
               <SpellInfo spell={this.state.selectedSpell}/>
-              
-            {(this.props.user) ? <AddSpellToSpellBook spell={this.state.selectedSpell} user={this.props.user}/>
-            : null}
+              <AddSpellToSpellBook spell={this.state.selectedSpell} />
             </>
           ) : null}
         </div>

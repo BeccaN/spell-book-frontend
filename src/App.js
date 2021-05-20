@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Navbar from './components/Navbar'
-import SpellsContainer from './containers/SpellsContainer'
-import SpellBooksContainer from './containers/SpellBooksContainer'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import SpellsContainer from './containers/SpellsContainer'
+import SpellBookContainer from './containers/SpellBookContainer'
+
 import {tokenCheck} from './actions/tokenCheck'
 import {logoutUser} from './actions/logoutUser'
+import {fetchSpellBooks} from './actions/fetchSpellBooks'
+import {fetchSpellSpellBooks} from './actions/fetchSpellSpellBooks'
 
 class App extends Component {
   
   componentDidMount() {
     const token = localStorage.getItem("token")
     this.props.tokenCheck(token)
+    this.props.fetchSpellBooks()
+    this.props.fetchSpellSpellBooks()
   }
 
   logOutHandler = () => {
@@ -28,10 +33,10 @@ class App extends Component {
     return (
       <div className="mx-4">
         <Navbar user={this.props.user} logOutHandler={this.logOutHandler}/>
-        <Route exact path="/" component={SpellsContainer} />
+        <Route exact path="/" render={() => <SpellsContainer user={this.props.user} />} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
-        <SpellBooksContainer />
+        <SpellBookContainer user={this.props.user} />
       </div>
     )
   }
@@ -39,8 +44,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user.user
+    user: state.user.user,
   }
 }
 
-export default connect(mapStateToProps, {tokenCheck, logoutUser})(App)
+export default connect(mapStateToProps, {tokenCheck, logoutUser, fetchSpellBooks, fetchSpellSpellBooks})(App)

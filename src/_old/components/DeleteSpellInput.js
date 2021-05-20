@@ -6,12 +6,12 @@ import {deleteSpellSpellBook} from '../actions/deleteSpellSpellBook'
 class DeleteSpellInput extends Component {
 
   handleClick = (e) => {
-    console.log(this.props.spell_id, this.props.spell_book_id)
-    // let join = this.props.spell_spell_books.find(join => join.spell_id === this.props.spell_id && join.spell_book_id === this.props.spell_book_id)
-    // this.props.deleteSpellSpellBook(join)
+    let join = this.props.spell_spell_books.find(join => join.spell_id === this.props.spell_id && join.spell_book_id === this.props.spell_book_id)
+    this.props.deleteSpellSpellBook(join)
   }
   
   render() {
+    
     return (
       <div>
         <button onClick={this.handleClick}>Delete Spell</button>
@@ -19,5 +19,6 @@ class DeleteSpellInput extends Component {
     )
   }
 }
+
 
 export default connect(null, {deleteSpellSpellBook})(DeleteSpellInput)
