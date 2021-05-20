@@ -15,7 +15,7 @@ class SpellBookForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.addSpellBook(this.state)
+    this.props.addSpellBook({title: this.state.title, user_id: this.props.user.id})
     this.setState({
       title: ""
     })

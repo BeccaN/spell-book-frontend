@@ -1,20 +1,23 @@
 import React from 'react'
+import DeleteSpellInput from './DeleteSpellInput'
 
 export default function SpellInfo(props) {
+  
   return (
-    <div className="container">
-      <h3>Spell Info</h3>
+    <div className="container" key={props.spell.id}>
+      <div className="d-flex justify-content-between">
+        <h3>{props.spell.name}</h3>
+        {props.spell_book_id ? <DeleteSpellInput spell_id={props.spell.id} spell_book_id={props.spell_book_id} />
+        : null }
+      </div>
       <div className="row">
-        <div className="col">
-          Spell: <strong>{props.spell.name}</strong>
-        </div>
         <div className="col">
           Level: <strong>{props.spell.level}</strong>
         </div>
       </div>
       <div className="row">
         <div className="col">
-          classNamees: <strong>{props.spell.dnd_className}</strong>
+          Class: <strong>{props.spell.dnd_class}</strong>
         </div>
         <div className="col">
           School: <strong>{props.spell.school}</strong>
@@ -45,7 +48,7 @@ export default function SpellInfo(props) {
         </div>
       </div>
       
-      <div classNameName="mt-2">        
+      <div className="mt-2">        
         Description: <div dangerouslySetInnerHTML={{__html: props.spell.desc}} />
         <div dangerouslySetInnerHTML={{__html: props.spell.higher_lvl}} />
       </div>
