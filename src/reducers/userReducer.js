@@ -10,5 +10,3 @@ function userReducer(state = [], action) {
 }
 
 export default userReducer;
-
-// store user is either empty array or filled 

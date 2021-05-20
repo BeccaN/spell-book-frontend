@@ -5,10 +5,13 @@ import {deleteSpellSpellBook} from '../actions/deleteSpellSpellBook'
 
 class DeleteSpellInput extends Component {
 
+  //spell_id
+  //spell_book_id
+  //I NEED SPELL SPELL BOOK ID
+
   handleClick = (e) => {
-    console.log(this.props.spell_id, this.props.spell_book_id)
-    // let join = this.props.spell_spell_books.find(join => join.spell_id === this.props.spell_id && join.spell_book_id === this.props.spell_book_id)
-    // this.props.deleteSpellSpellBook(join)
+    let join = this.props.spell_spell_books.find(join => join.spell_id === this.props.spell_id && join.spell_book_id === this.props.spell_book_id)
+    this.props.deleteSpellSpellBook(join)
   }
   
   render() {
@@ -20,4 +23,10 @@ class DeleteSpellInput extends Component {
   }
 }
 
-export default connect(null, {deleteSpellSpellBook})(DeleteSpellInput)
+const mapStateToProps = state => {
+  return {
+    spell_spell_books: state.spell_spell_books.spell_spell_books
+  }
+}
+
+export default connect(mapStateToProps, {deleteSpellSpellBook})(DeleteSpellInput)

@@ -10,7 +10,7 @@ class SpellBookContainer extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/spellbooks/:id" render={(routerProps) => <SpellBookShow {...routerProps} />} />
+          <Route path="/spellbooks/:id" render={(routerProps) => <SpellBookShow {...routerProps} user={this.props.user} />} />
           <Route path="/spellbooks" render={(routerProps) => <SpellBooks {...routerProps} user={this.props.user} /> } />
         </Switch>
       </div>

@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 class SpellBooks extends Component {
   
   render() {
+    const spell_books = this.props.spell_books.filter(book => book.user_id === this.props.user.id)
 
     return (
       <div>
@@ -13,9 +14,14 @@ class SpellBooks extends Component {
           <CreateSpellBook user={this.props.user}/>
         </div>
         <div>
-          <h3>All Spell Books</h3>
-          {(this.props.spell_books) ? this.props.spell_books.map(book => <li key={book.id}><Link to={`/spellbooks/${book.id}`}>{book.title}</Link></li>)
-          : null}
+          {(this.props.user) ? <h3>{this.props.user.username}'s Spell Books</h3> : null}
+          
+          {(spell_books) ? 
+          <>
+            {spell_books.map(book => <li key={book.id}><Link to={`/spellbooks/${book.id}`}>{book.title}</Link></li>)}
+          </>
+          : null
+          }
         </div>
       </div>
     )

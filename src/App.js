@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Switch} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Navbar from './components/Navbar'
