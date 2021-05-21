@@ -27,7 +27,7 @@ class SpellsContainer extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row m-3">
         <div className='styled-con col-md p-3 m-2 bg-light h-100'>
           {this.state.selectedSpell != null ? (
             <>

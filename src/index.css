@@ -37,4 +37,19 @@ code {
 .logout {
   background: none;
   border: none;
+  color: white;
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: green;
 }

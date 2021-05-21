@@ -31,7 +31,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="mx-4">
+      <div className="">
         <Navbar user={this.props.user} logOutHandler={this.logOutHandler}/>
         <Route exact path="/" render={() => <SpellsContainer user={this.props.user} />} />
         <Route exact path="/signup" component={Signup} />

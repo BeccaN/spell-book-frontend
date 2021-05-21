@@ -35,7 +35,7 @@ export default function SpellInfo(props) {
         <div className="col">
           Components: <strong>{props.spell.components}</strong>
         </div>
-        <div className="col">
+        <div className="col d-flex">
           Materials: <strong><div dangerouslySetInnerHTML={{__html: props.spell.material}} /></strong>
         </div>
       </div>
