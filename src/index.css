@@ -13,7 +13,7 @@ code {
 }
 
 * {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family:'Lucida Console'
 }
 
 .spells {
@@ -27,4 +27,14 @@ code {
   border: 2px solid;
   border-radius: 4px;
   padding: .5rem;;
+}
+
+.styled-con {
+  border-style: solid;
+  box-shadow: 7px 7px 0px;
+}
+
+.logout {
+  background: none;
+  border: none;
 }

@@ -1,31 +1,32 @@
-import React, { Component } from 'react'
+import React from 'react'
 import CreateSpellBook from './CreateSpellBook'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
+import {Redirect, useHistory} from 'react-router-dom'
 
-class SpellBooks extends Component {
+
+function SpellBooks(props) {
+  const spell_books = (props.user) ? props.spell_books.filter(book => book.user_id === props.user.id) : null
   
-  render() {
-    const spell_books = this.props.spell_books.filter(book => book.user_id === this.props.user.id)
-
-    return (
-      <div>
-        <div className="">
-          <CreateSpellBook user={this.props.user}/>
-        </div>
-        <div>
-          {(this.props.user) ? <h3>{this.props.user.username}'s Spell Books</h3> : null}
-          
-          {(spell_books) ? 
-          <>
-            {spell_books.map(book => <li key={book.id}><Link to={`/spellbooks/${book.id}`}>{book.title}</Link></li>)}
-          </>
-          : null
-          }
-        </div>
+  return (
+    <div>
+      <div className="">
+        <CreateSpellBook user={props.user}/>
       </div>
-    )
-  }
+      <div>
+        {(props.user) ? <h3>{
+        
+        props.user.username}'s Spell Books</h3> : null}
+        
+        {(spell_books) ? 
+        <>
+          {spell_books.map(book => <li key={book.id}><Link to={`/spellbooks/${book.id}`}>{book.title}</Link></li>)}
+        </>
+        : <Redirect to="/" />
+        }
+      </div>
+    </div>
+  )
 }
 
 const mapStateToProps = state => {

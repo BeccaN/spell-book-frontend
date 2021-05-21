@@ -17,25 +17,28 @@ class AddSpellToSpellBook extends Component {
     this.props.addSpellSpellBook({spell_book_id: this.state.spell_book_id, spell_id: this.props.spell.id})
   }
 
-  userSpellBooks = (this.props.spell_books) ? this.props.spell_books.filter(book => book.user_id === this.props.user.id) : null
-
   render() {
     
+    const userSpellBooks = (this.props.spell_books) ? this.props.spell_books.filter(book => book.user_id === this.props.user.id) : null
+
     return (
       <div className="container mt-3">
-        <select name="spell_book" id="spell_book" onChange={this.handleChange}>
+      {(userSpellBooks) ? 
+        <>
+          <select name="spell_book" id="spell_book" onChange={this.handleChange}>
           <option value="none" selected disabled hidden>Select Spell Book</option>
 
-          {(this.userSpellBooks) ? this.props.spell_books.map(book => <option value={book.id} key={book.id}>{book.title}</option>)
-          : null }
+          {userSpellBooks.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
 
-        </select>
-        <button type="Submit" className="btn btn-primary btn-sm" onClick={this.handleClick}>+ Spell to Book</button>
-        {
-        (this.props.error !== "") ? 
-        <p>{this.props.error}</p>
-        : null
-        }
+          </select>
+          <button type="Submit" className="btn btn-primary btn-sm" onClick={this.handleClick}>+ Spell to Book</button>
+          {
+          (this.props.error !== "") ? 
+          <p>{this.props.error}</p>
+          : null
+          }
+        </>
+      : <small>Please either log into your account, or go to 'Spellbooks' in the nav bar and create your first spellbook!</small> }
       </div>
     )
   }
