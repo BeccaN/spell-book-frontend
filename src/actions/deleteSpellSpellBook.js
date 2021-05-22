@@ -1,5 +1,7 @@
 export const deleteSpellSpellBook = (data) => {
+  
   return (dispatch)  => {
+    
     const apiUrl = `http://localhost:8000/api/v1/spell_spell_books/${data.id}`
     
     fetch (apiUrl, {

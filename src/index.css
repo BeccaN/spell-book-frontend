@@ -51,5 +51,9 @@ code {
 }
 
 .navbar a:hover {
-  color: green;
+  color: #fcc663;
+}
+
+.logo {
+  width: 50px;
 }
