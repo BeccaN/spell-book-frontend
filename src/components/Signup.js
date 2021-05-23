@@ -16,13 +16,13 @@ function Signup(props) {
   }
 
   return (
-    <div>
-      <h3>Signup Form</h3>
+    <div className="center">
+      <h3 className="header my-1">Signup Form</h3>
       <form onSubmit={submitHandler}>
-        <input type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
-        <input type="text" name="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
-        <input type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-        <input type="submit" value="signup" />
+        <input className="my-1" type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
+        <input className="my-1" type="text" name="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
+        <input className="my-1" type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+        <input className="my-1" type="submit" value="signup" className="form-btn" />
       </form>
     </div>
   )

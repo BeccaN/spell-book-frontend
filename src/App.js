@@ -4,8 +4,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Navbar from './components/Navbar'
-import Signup from './components/Signup'
-import Login from './components/Login'
+import LoginSignup from './containers/LoginSignup'
 import SpellsContainer from './containers/SpellsContainer'
 import SpellBookContainer from './containers/SpellBookContainer'
 
@@ -34,8 +33,7 @@ class App extends Component {
       <div className="">
         <Navbar user={this.props.user} logOutHandler={this.logOutHandler}/>
         <Route exact path="/" render={() => <SpellsContainer user={this.props.user} />} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login-signup" component={LoginSignup} />
         <SpellBookContainer user={this.props.user} />
       </div>
     )

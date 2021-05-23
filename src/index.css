@@ -57,3 +57,43 @@ code {
 .logo {
   width: 50px;
 }
+
+.divider {
+  border-left: 4px solid black;
+  margin: 30px;
+}
+
+.login-signup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center {
+  text-align: center;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  width: 250px;
+}
+
+.form-btn {
+  background-color: #352eff;
+  color: white;
+  border-style: none;
+}
+
+.form-btn:hover {
+  background-color: #fcc663;;
+}
+
+input {
+  border-style: solid;
+  border-color: black;
+  width: 250px;
+  padding: 5px;
+}

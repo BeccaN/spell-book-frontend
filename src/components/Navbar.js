@@ -17,8 +17,7 @@ export default function Navbar(props) {
         </>
         :   
         <>      
-          <NavLink to="/signup" exact >Signup</NavLink>{" | "}
-          <NavLink to="/login" exact >Login</NavLink>{" | "}
+          <NavLink to="/login-signup" exact >Login / Signup</NavLink>
         </>
         }
       </div>

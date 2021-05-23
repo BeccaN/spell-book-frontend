@@ -15,12 +15,12 @@ function Login(props) {
   }
 
   return (
-    <div>
-      <h3>Login Form</h3>
+    <div className="center">
+      <h3 className="header my-1" >Login Form</h3>
       <form onSubmit={submitHandler}>
-        <input type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
-        <input type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-        <input type="submit" value="login" />
+        <input className="my-1" type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
+        <input className="my-1" type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+        <input className="my-1" type="submit" value="login" className="form-btn" />
       </form>
     </div>
   )

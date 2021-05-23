@@ -25,13 +25,13 @@ class AddSpellToSpellBook extends Component {
       <div className="container mt-3">
       {(userSpellBooks) ? 
         <>
+        <div className="d-flex justify-content-between">
           <select name="spell_book" id="spell_book" onChange={this.handleChange}>
-          <option value="none" selected disabled hidden>Select Spell Book</option>
-
-          {userSpellBooks.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
-
+            <option value="none" selected disabled hidden>Select Spell Book</option>
+            {userSpellBooks.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
           </select>
-          <button type="Submit" className="btn btn-primary btn-sm" onClick={this.handleClick}>+ Spell to Book</button>
+          <button type="Submit" className="form-btn" onClick={this.handleClick}>+ Spell to Book</button>
+        </div>
           {
           (this.props.error !== "") ? 
           <p>{this.props.error}</p>
