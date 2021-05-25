@@ -12,38 +12,48 @@ class SpellBookShow extends Component {
   }
   
   spell_book = this.props.spell_books.find(book => book.id === parseInt(this.props.match.params.id))
+ 
+  checkSpellbook = () => {
+    if (this.spell_book) {
+      let spells = this.spell_book.spells.sort((a, b) => a.level > b.level && 1 || -1)
+      return (
+        <>
+          <div className="d-flex justify-content-between align-items-end mb-2">
+            <><h1>{this.spell_book.title}</h1><h4>user: {this.spell_book.username}</h4></>
+          </div>  
+      
+          <div className="spells">
+            
+            {this.spell_book.spells.map(spell => 
+
+            <div className="styled-con p-2" key={spell.id}>
+
+              <div className="d-flex justify-content-between">
+                <h3><strong>{spell.name}</strong></h3>
+                <DeleteSpellInput spell_id={spell.id} spell_book_id={this.spell_book.id} />
+              </div>
+
+              <CollapsibleDesc spell={spell}/>
+            </div>
+
+            )}
+          </div>
+        
+          <div className="mt-4">
+            <button className="form-btn p-1" onClick={this.handleClick} value={this.spell_book.id}>Delete Spell Book</button>
+          </div>
+        </>
+      )
+    } else {
+      return (<Redirect to="/spellbooks" />)
+    }
+  }
 
   render() {
     
     return (
       <div>
-        {this.spell_book ? 
-          <>
-            <div className="d-flex justify-content-between align-items-end mb-2">
-              <><h1>{this.spell_book.title}</h1><h4>user: {this.spell_book.username}</h4></>
-            </div>  
-        
-            <div className="spells">
-              {this.spell_book.spells.map(spell => 
-
-              <div className="styled-con p-2" key={spell.id}>
-
-                <div className="d-flex justify-content-between">
-                  <h3><strong>{spell.name}</strong></h3>
-                  <DeleteSpellInput spell_id={spell.id} spell_book_id={this.spell_book.id} />
-                </div>
-
-                <CollapsibleDesc spell={spell}/>
-              </div>
-              )}
-            </div>
-          
-            <div className="mt-4">
-              <button className="form-btn p-1" onClick={this.handleClick} value={this.spell_book.id}>Delete Spell Book</button>
-            </div>
-          </>
-        : <Redirect to="/spellbooks" /> 
-        }
+         {this.checkSpellbook()}
       </div>  
     ) 
   }

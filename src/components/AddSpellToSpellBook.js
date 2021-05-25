@@ -25,21 +25,23 @@ class AddSpellToSpellBook extends Component {
       <div className="container mt-3">
       {(userSpellBooks) ? 
         <>
-        <div className="d-flex justify-content-around">
-          
-          <select className="p-1" name="spell_book" id="spell_book" onChange={this.handleChange}>
-            <option value="none" selected disabled hidden>Select Spell Book</option>
-            {userSpellBooks.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
-          </select>
-          
-          <button type="Submit" className="p-1 form-btn" onClick={this.handleClick}>+ Spell to Book</button>
-          
-        </div>
-          {
-          (this.props.error !== "") ? 
-          <p>{this.props.error}</p>
-          : null
-          }
+          <div className="d-flex justify-content-around">
+            
+            <select className="p-1" name="spell_book" id="spell_book" onChange={this.handleChange}>
+              <option value="none" selected disabled hidden>Select Spell Book</option>
+              {userSpellBooks.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
+            </select>
+            
+            <button type="Submit" className="p-1 form-btn" onClick={this.handleClick}>+ Spell to Book</button>
+            
+          </div>
+          <div className="center mt-2">
+            {
+            (this.props.error !== "") ? 
+            <p>--{this.props.error}--</p>
+            : null
+            }
+          </div>
         </>
       : <small>Please either log into your account, or go to 'Spellbooks' in the nav bar and create your first spellbook!</small> }
       </div>
