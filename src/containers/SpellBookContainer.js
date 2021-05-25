@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 class SpellBookContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="m-3">
         <Switch>
           <Route path="/spellbooks/:id" render={(routerProps) => <SpellBookShow {...routerProps} user={this.props.user} />} />
           <Route path="/spellbooks" render={(routerProps) => <SpellBooks {...routerProps} user={this.props.user} /> } />

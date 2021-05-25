@@ -23,10 +23,10 @@ class SpellBookForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="m-3 d-flex justify-content-center">
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Spell Book Title" value={this.state.title} onChange={this.handleChange}/>
-          <input type="Submit" />
+          <input type="Submit" className="form-btn m-3" readOnly value="Create Spell Book" />
         </form>
       </div>
     )

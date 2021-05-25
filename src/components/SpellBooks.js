@@ -2,8 +2,7 @@ import React from 'react'
 import CreateSpellBook from './CreateSpellBook'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import {Redirect, useHistory} from 'react-router-dom'
-
+import {Redirect} from 'react-router-dom'
 
 function SpellBooks(props) {
   const spell_books = (props.user) ? props.spell_books.filter(book => book.user_id === props.user.id) : null
@@ -12,10 +11,13 @@ function SpellBooks(props) {
     if (localStorage.getItem("token") !== null) {
       if (props.user) {
         return (
-          <>
-          <h3>{props.user.username}'s Spell Books</h3>
-          {spell_books.map(book => <li key={book.id}><Link to={`/spellbooks/${book.id}`}>{book.title}</Link></li>)}
-          </>
+          <div className="m-3 my-4 spell-books">
+            {spell_books.map(book =>
+            <div key={book.id} className="spell-book m-3">
+              <Link to={`/spellbooks/${book.id}`} className=""><h2><span>{book.title}</span></h2></Link>
+            </div>
+            )}
+          </div>
         )
       } else {
       return (
@@ -28,12 +30,11 @@ function SpellBooks(props) {
 
   return (
     <div>
-      <div className="">
-        <CreateSpellBook user={props.user}/>
-      </div>
-      <div>
-        {tokenUserCheck()}
-      </div>
+      
+      <CreateSpellBook user={props.user}/>
+      
+      {tokenUserCheck()}
+      
     </div>
   )
 }
