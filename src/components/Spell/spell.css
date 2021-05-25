@@ -1,0 +1,15 @@
+.spell-header{
+  cursor: pointer;
+  padding: 5px;
+}
+
+.content{
+  cursor: pointer;
+  background-color: #e2e2e2;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.direction {
+  color: #352eff;
+}
