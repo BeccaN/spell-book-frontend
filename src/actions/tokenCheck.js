@@ -9,8 +9,6 @@ export const tokenCheck = (token) => {
       .then ((data) => {
         dispatch({ type: 'ADD_USER', payload: data});
       })
-    } else {
-      console.log("no one is logged in -- tokenCheck action")
     }
   }
 }

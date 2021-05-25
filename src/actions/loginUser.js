@@ -16,8 +16,7 @@ export const loginUser = (userObj, history) => {
           dispatch({ type: 'ADD_USER', payload: data });
           history.push('/');
         } else {
-          console.log(data.error)
-          // dispatch action to set error to reducer
+          dispatch({type: 'ADD_ERROR_LOGIN', payload: data})
         }
       })
   }

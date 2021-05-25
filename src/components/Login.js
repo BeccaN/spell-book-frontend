@@ -19,11 +19,24 @@ function Login(props) {
       <h3 className="header my-1" >Login Form</h3>
       <form onSubmit={submitHandler}>
         <input className="my-1" type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
-        <input className="my-1" type="password" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-        <input className="my-1" type="submit" value="login" className="form-btn" />
+        <input className="my-1" type="password" name="password" placeholder="password" value={password} autoComplete="on" onChange={(e) => setPassword(e.target.value)} /><br />
+        <input className="my-1 form-btn" type="submit" value="login" />
+        <div>
+          {
+          (props.error_login !== "") ? 
+            <div>{props.error_login}</div> 
+          : null
+          }
+        </div>
       </form>
     </div>
   )
 }
 
-export default connect(null, {loginUser})(Login)
+const mapStateToProps = state => {
+  return {
+    error_login: state.error.error_login
+  }
+}
+
+export default connect(mapStateToProps, {loginUser})(Login)

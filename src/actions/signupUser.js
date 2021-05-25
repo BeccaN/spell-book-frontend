@@ -1,4 +1,5 @@
 export const signupUser = (userObj, history) => {
+  
   return (dispatch)  => {
     const apiUrl = 'http://localhost:8000/api/v1/users'
     fetch (apiUrl, {
@@ -16,8 +17,8 @@ export const signupUser = (userObj, history) => {
           dispatch({ type: 'ADD_USER', payload: data });
           history.push('/');
         } else {
-          console.log(data.error)
-          //dispatch action to set error to reducer
+          
+          dispatch({type: 'ADD_ERROR_SIGNUP', payload: data})
         }
       })
   }
