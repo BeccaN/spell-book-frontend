@@ -14,7 +14,7 @@ export const addSpellSpellBook = (data) => {
           if (data.error){
           dispatch({type: "SPELL_SPELL_BOOK_ERROR", payload: data})
         } else {
-          // dispatch({type: "ADD_SPELL_SPELL_BOOK", payload: data})
+          dispatch({type: "ADD_SPELL_SPELL_BOOK", payload: data})
           dispatch({type: "UPDATE_SPELL_BOOK", payload: data})
         }
       })

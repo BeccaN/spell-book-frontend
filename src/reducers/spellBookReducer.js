@@ -20,7 +20,6 @@ export default function spellBookReducer(state = {spell_books: []}, action) {
       return {...state, spell_books: [...filteredState, action.payload[1]]};
     }
     case 'DELETE_SPELL_BOOK': {
-      
       let filteredState = state.spell_books.filter(book => book.id !== parseInt(action.data))
       return {...state, spell_books: filteredState};
     }
