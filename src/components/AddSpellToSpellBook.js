@@ -39,7 +39,7 @@ class AddSpellToSpellBook extends Component {
               {userSpellBooks.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
             </select>
             
-            <button type="Submit" className="p-1 form-btn" onClick={this.handleClick}>+ Spell to Book</button>
+            <button type="Submit" className="p-1 form-btn" onClick={this.handleClick}>+ Spell to Spellbook</button>
             
           </div>
           <div className="center mt-2 error">
