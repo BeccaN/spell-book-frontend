@@ -15,7 +15,9 @@ class SpellBookShow extends Component {
  
   checkSpellbook = () => {
     if (this.spell_book) {
-      let spells = this.spell_book.spells.sort((a, b) => a.level > b.level && 1 || -1)
+      
+      this.spell_book.spells.sort((a, b) => a.level > b.level && 1 || -1)
+      
       return (
         <>
           <div className="d-flex justify-content-between align-items-end mb-2">

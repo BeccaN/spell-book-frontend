@@ -15,16 +15,16 @@ function Login(props) {
   }
 
   return (
-    <div className="center">
-      <h3 className="header my-1" >Login Form</h3>
-      <form onSubmit={submitHandler}>
+    <div className="center testing">
+      <h3 className="w-100" >Login Form</h3>
+      <form onSubmit={submitHandler} className="w-100">
         <input className="my-1" type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />
         <input className="my-1" type="password" name="password" placeholder="password" value={password} autoComplete="on" onChange={(e) => setPassword(e.target.value)} /><br />
         <input className="my-1 form-btn" type="submit" value="login" />
         <div>
           {
           (props.error_login !== "") ? 
-            <div>{props.error_login}</div> 
+            <div className="error">{props.error_login}</div> 
           : null
           }
         </div>

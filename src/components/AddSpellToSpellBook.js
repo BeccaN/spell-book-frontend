@@ -4,7 +4,8 @@ import {addSpellSpellBook} from '../actions/addSpellSpellBook'
 
 class AddSpellToSpellBook extends Component {
   state = {
-    spell_book_id: null
+    spell_book_id: null,
+    timedError: ""
   }
 
   handleChange = (e) => {
@@ -15,6 +16,12 @@ class AddSpellToSpellBook extends Component {
 
   handleClick = () => {
     this.props.addSpellSpellBook({spell_book_id: this.state.spell_book_id, spell_id: this.props.spell.id})
+  }
+
+  handleError = () => {
+    this.setState({
+      timedError: this.props.error
+    })
   }
 
   render() {
@@ -35,10 +42,12 @@ class AddSpellToSpellBook extends Component {
             <button type="Submit" className="p-1 form-btn" onClick={this.handleClick}>+ Spell to Book</button>
             
           </div>
-          <div className="center mt-2">
+          <div className="center mt-2 error">
             {
             (this.props.error !== "") ? 
-            <p>--{this.props.error}--</p>
+            <>
+              {this.props.error}
+            </>
             : null
             }
           </div>

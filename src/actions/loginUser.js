@@ -16,7 +16,7 @@ export const loginUser = (userObj, history) => {
           dispatch({ type: 'ADD_USER', payload: data });
           history.push('/');
         } else {
-          dispatch({type: 'ADD_ERROR_LOGIN', payload: data})
+          dispatch({type: 'ADD_ERROR_LOGIN', payload: data});
         }
       })
   }

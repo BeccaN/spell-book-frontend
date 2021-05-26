@@ -13,6 +13,9 @@ export default function spellSpellBookReducer(state = {spell_spell_books: [], er
     case "ADD_SPELL_SPELL_BOOK": {
       return {...state, spell_spell_books: [...state.spell_spell_books, action.payload[0]]};
     }
+    case "RESET_ERROR": {
+      return {...state, error: ""}
+    }
     default:
       return state
   }

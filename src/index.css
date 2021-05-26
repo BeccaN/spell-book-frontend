@@ -40,6 +40,10 @@ code {
   color: white;
 }
 
+.logout:hover {
+  color: #f8a546;
+}
+
 .navbar {
   background-color: black;
   color: white;
@@ -52,10 +56,6 @@ code {
 
 .navbar a:hover {
   color: #f8a546;
-}
-
-.logo {
-  width: 50px;
 }
 
 .divider {
@@ -90,6 +90,9 @@ code {
 .form-btn:hover {
   background-color: #352eff;
 }
+.form-btn:active {
+  transform: translateY(3px)
+}
 
 input {
   border-style: solid;
@@ -121,4 +124,12 @@ hr.solid {
 
 .spell-book a:hover {
   color: #f8a546;
+}
+
+.testing {
+  width: 300px;
+}
+
+.error {
+  color: #d84a45;
 }
