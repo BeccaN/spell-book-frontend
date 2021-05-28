@@ -17,6 +17,9 @@ export const loginUser = (userObj, history) => {
           history.push('/');
         } else {
           dispatch({type: 'ADD_ERROR_LOGIN', payload: data});
+          setTimeout(() => {
+            dispatch({type: "RESET_USER_LOGIN_ERROR"})
+          }, 4000)
         }
       })
   }

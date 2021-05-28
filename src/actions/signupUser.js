@@ -18,6 +18,9 @@ export const signupUser = (userObj, history) => {
           history.push('/');
         } else {
           dispatch({type: 'ADD_ERROR_SIGNUP', payload: data})
+          setTimeout(() => {
+            dispatch({type: "RESET_USER_SIGNUP_ERROR"})
+          }, 4000)
         }
       })
   }
