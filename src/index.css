@@ -31,7 +31,8 @@ code {
 
 .styled-con {
   border-style: solid;
-  box-shadow: 7px 7px 0px;
+  border-color: black;
+  box-shadow: 7px 7px 0px black;
 }
 
 .logout {

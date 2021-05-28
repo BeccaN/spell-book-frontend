@@ -28,7 +28,7 @@ class SpellBookShow extends Component {
             
             {this.spell_book.spells.map(spell => 
 
-            <div className="styled-con p-2" key={spell.id}>
+            <div className="styled-con p-2 m-1" key={spell.id}>
 
               <div className="d-flex justify-content-between">
                 <h3><strong>{spell.name}</strong></h3>
