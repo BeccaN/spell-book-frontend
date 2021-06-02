@@ -25,18 +25,18 @@ class App extends Component {
 
   logOutHandler = () => {
     localStorage.removeItem("token")
-    //redirect
     this.props.logoutUser()
   }
 
   render() {
     return (
-      <div className="">
+      <div className="position-relative">
         <Navbar user={this.props.user} logOutHandler={this.logOutHandler}/>
         <Route exact path="/" render={() => <SpellsContainer user={this.props.user} />} />
         <Route exact path="/login-signup" component={LoginSignup} />
         <SpellBookContainer user={this.props.user} />
-        <Footer />
+  
+        <Route path="/" render={(routerProps) => <Footer {...routerProps}/> } />
       </div>
     )
   }

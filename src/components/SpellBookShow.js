@@ -12,7 +12,7 @@ class SpellBookShow extends Component {
   }
   
   spell_book = this.props.spell_books.find(book => book.id === parseInt(this.props.match.params.id))
- 
+
   checkSpellbook = () => {
     if (this.spell_book) {
       
@@ -36,6 +36,7 @@ class SpellBookShow extends Component {
               </div>
 
               <CollapsibleDesc spell={spell}/>
+
             </div>
 
             )}
@@ -44,6 +45,8 @@ class SpellBookShow extends Component {
           <div className="mt-4">
             <button className="form-btn p-1" onClick={this.handleClick} value={this.spell_book.id}>Delete Spell Book</button>
           </div>
+
+
         </>
       )
     } else {

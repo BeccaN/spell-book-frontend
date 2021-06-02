@@ -1,10 +1,24 @@
 import React from 'react'
 
-export default function Footer() {
+export default function Footer(props) {
+  const {location} = props
+  console.log(location.pathname)
+  
+  const renderCheck = () => {
+    if (!(location.pathname === '/login-signup')) {
+      return (
+        <div>
+          Footer
+        </div>
+      )
+    } else {
+      return (
+        null
+      )
+    }
+  }
+
   return (
-    <div className="m-4">
-      <hr className="solid"></hr>
-      <small>&copy; 2021 <strong>RPG Spellbook</strong></small>
-    </div>
+    renderCheck()
   )
 }
