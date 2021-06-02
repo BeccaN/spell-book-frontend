@@ -7,7 +7,7 @@ export default function Footer(props) {
   const renderCheck = () => {
     if (!(location.pathname === '/login-signup')) {
       return (
-        <div>
+        <div className="footer px-3">
           <strong>&copy; 2021 RPG Spellbook</strong>
         </div>
       )

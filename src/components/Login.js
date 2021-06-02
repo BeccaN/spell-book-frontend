@@ -15,7 +15,7 @@ function Login(props) {
   }
 
   return (
-    <div className="center testing">
+    <div className="center">
       <h3 className="w-100" >Login Form</h3>
       <form onSubmit={submitHandler} className="w-100">
         <input className="my-1" type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br />

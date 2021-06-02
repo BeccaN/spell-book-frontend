@@ -16,7 +16,7 @@ function Signup(props) {
   }
 
   return (
-    <div className="center testing">
+    <div className="center">
       <h3 className="w-100">Signup Form</h3>
       <form onSubmit={submitHandler} className="w-100">
         <input className="my-1" type="text" name="username" placeholder="username" value={username} pattern=".{6,12}" title="6 to 12 characters" required onChange={(e) => setUsername(e.target.value)} /><br />

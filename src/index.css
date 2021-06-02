@@ -106,10 +106,20 @@ hr.solid {
   border-top: 5px solid #352eff;
 }
 
-footer {
-  position: relative;
+.footer {
+  position: absolute;
   width: 100%;
   bottom: 0;
+  height: 2.5rem;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;
 }
 
 .spell-book {
@@ -131,10 +141,6 @@ footer {
 
 .spell-book a:hover {
   color: #f8a546;
-}
-
-.testing {
-  width: 300px;
 }
 
 .error {

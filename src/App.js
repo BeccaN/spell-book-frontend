@@ -30,12 +30,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="position-relative">
-        <Navbar user={this.props.user} logOutHandler={this.logOutHandler}/>
-        <Route exact path="/" render={() => <SpellsContainer user={this.props.user} />} />
-        <Route exact path="/login-signup" component={LoginSignup} />
-        <SpellBookContainer user={this.props.user} />
-  
+      <div className="position-relative page-container">
+        <div className="content-wrap">
+          <Navbar user={this.props.user} logOutHandler={this.logOutHandler}/>
+          <Route exact path="/" render={() => <SpellsContainer user={this.props.user} />} />
+          <Route exact path="/login-signup" component={LoginSignup} />
+          <SpellBookContainer user={this.props.user} />
+        </div>
         <Route path="/" render={(routerProps) => <Footer {...routerProps}/> } />
       </div>
     )
