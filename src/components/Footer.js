@@ -8,7 +8,7 @@ export default function Footer(props) {
     if (!(location.pathname === '/login-signup')) {
       return (
         <div>
-          Footer
+          <strong>&copy; 2021 RPG Spellbook</strong>
         </div>
       )
     } else {
