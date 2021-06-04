@@ -2,6 +2,8 @@
 
 RPG Spellbook is an app for Dungeons and Dragons 5th edition players to manage their various character spell books. This apps goal is to provide all useful spell information with an accessible UI. 
 
+[Demo Video Guide](https://www.youtube.com/watch?v=MvgMYP8EYvI&t=12s)
+
 ## Download and Installation Instructions
 
 Begin by cloning the [Spellbook API](https://github.com/BeccaN/spell-book-backend) and following the API instructions below.
