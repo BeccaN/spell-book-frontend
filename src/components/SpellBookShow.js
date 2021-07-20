@@ -12,7 +12,7 @@ class SpellBookShow extends Component {
   }
   
   spell_book = this.props.spell_books.find(book => book.id === parseInt(this.props.match.params.id))
-
+  
   checkSpellbook = () => {
     if (this.spell_book) {
       
@@ -55,7 +55,7 @@ class SpellBookShow extends Component {
   }
 
   render() {
-    
+    console.log(this.props)
     return (
       <div>
          {this.checkSpellbook()}

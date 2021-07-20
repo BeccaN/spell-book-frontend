@@ -1,3 +1,5 @@
+// All spell books associated with the user
+
 import React from 'react'
 import CreateSpellBook from './CreateSpellBook'
 import {Link} from 'react-router-dom'
@@ -5,14 +7,14 @@ import { connect } from 'react-redux'
 import {Redirect} from 'react-router-dom'
 
 function SpellBooks(props) {
-  const spell_books = (props.user) ? props.spell_books.filter(book => book.user_id === props.user.id) : null
+  // const spell_books = (props.user) ? props.spell_books.filter(book => book.user_id === props.user.id) : null
   
   const tokenUserCheck = () => {
     if (localStorage.getItem("token") !== null) {
       if (props.user) {
         return (
           <div className="m-3 my-4 spell-books">
-            {spell_books.map(book =>
+            {props.spell_books.map(book =>
             <div key={book.id} className="spell-book m-3">
               <Link to={`/spellbooks/${book.id}`} className=""><h2><span>{book.title}</span></h2></Link>
             </div>
