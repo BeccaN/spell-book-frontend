@@ -16,6 +16,7 @@ import {logoutUser} from './actions/logoutUser'
 class App extends Component {
   
   componentDidMount() {
+    
     const token = localStorage.getItem("token")
     this.props.tokenCheck(token)
     // this.props.fetchSpellBooks(token)
@@ -28,6 +29,7 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div className="position-relative page-container">
         <div className="content-wrap">

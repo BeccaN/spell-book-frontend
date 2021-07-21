@@ -1,6 +1,7 @@
 export const tokenCheck = (token) => {
   return (dispatch) => {
     if (token) {
+      
       fetch("http://localhost:8000/api/v1/profile", {
         method: "GET",
         headers: {

@@ -26,11 +26,9 @@ class AddSpellToSpellBook extends Component {
 
   render() {
     
-    // const userSpellBooks = (this.props.spell_books) ? this.props.spell_books.filter(book => book.user_id === this.props.user.id) : null
-
     return (
-      <div className="container mt-3">
-      {(this.props.spell_books === []) ? 
+      <div className="mt-3">
+      
         <>
           <div className="d-flex justify-content-around">
             
@@ -52,7 +50,7 @@ class AddSpellToSpellBook extends Component {
             }
           </div>
         </>
-      : <small>Please either log into your account, or go to 'Spellbooks' in the nav bar and create your first spellbook!</small> }
+      
       </div>
     )
   }

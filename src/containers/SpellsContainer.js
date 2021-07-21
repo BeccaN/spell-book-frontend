@@ -30,7 +30,7 @@ class SpellsContainer extends Component {
         <div className='styled-con col-md p-3 m-2 bg-light h-100'>
           {this.state.selectedSpell != null ? (
             <>
-              <div className="container">
+              <div className="">
                 <h3><strong>{this.state.selectedSpell.name}</strong></h3>
                 <div className="row">
                   <div className="col">
@@ -51,7 +51,12 @@ class SpellsContainer extends Component {
               </div>
               
             {(this.props.user) ? <AddSpellToSpellBook spell={this.state.selectedSpell} user={this.props.user}/>
-            : null}
+            : 
+            <div className="center">
+              <small>Please either log into your account, or go to 'Spellbooks' in the nav bar and create your first spellbook!</small>
+            </div>
+            }
+
             </>
           ) : null}
         </div>
