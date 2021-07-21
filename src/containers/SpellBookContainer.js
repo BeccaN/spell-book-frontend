@@ -1,27 +1,29 @@
-import React, { Component} from 'react'
+import React, {useEffect} from 'react'
 import { Route, Switch} from 'react-router-dom';
 import SpellBooks from '../components/SpellBooks'
 import SpellBookShow from '../components/SpellBookShow'
 
-import {fetchSpellBooks} from '../actions/fetchSpellBooks'
+import { fetchSpellBooks } from '../actions/fetchSpellBooks';
+import {fetchSpellSpellBooks} from '../actions/fetchSpellSpellBooks'
+
 import { connect } from 'react-redux';
 
-class SpellBookContainer extends Component {
+function SpellBookContainer(props) {
 
-  componentDidMount() {
-    this.props.fetchSpellBooks(localStorage.getItem("token"))
-  }
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    props.fetchSpellBooks(token)
+    props.fetchSpellSpellBooks(token)
+  })
 
-  render() {
-    return (
-      <div className="m-3">
-        <Switch>
-          <Route path="/spellbooks/:id" render={(routerProps) => <SpellBookShow {...routerProps} user={this.props.user} />} />
-          <Route path="/spellbooks" render={(routerProps) => <SpellBooks {...routerProps} user={this.props.user} /> } />
-        </Switch>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Switch>
+        <Route path="/spellbooks/:id" render={(routerProps) => <SpellBookShow {...routerProps} user={props.user} />} />
+        <Route path="/spellbooks" render={(routerProps) => <SpellBooks {...routerProps} user={props.user} /> } />
+      </Switch>
+    </div>
+  )
 }
 
-export default connect(null, {fetchSpellBooks})(SpellBookContainer)
+export default connect(null, {fetchSpellBooks, fetchSpellSpellBooks})(SpellBookContainer)

@@ -12,15 +12,14 @@ import SpellBookContainer from './containers/SpellBookContainer'
 import {tokenCheck} from './actions/tokenCheck'
 import {logoutUser} from './actions/logoutUser'
 
-import {fetchSpellSpellBooks} from './actions/fetchSpellSpellBooks'
 
 class App extends Component {
   
   componentDidMount() {
     const token = localStorage.getItem("token")
     this.props.tokenCheck(token)
-    // this.props.fetchSpellBooks()
-    // this.props.fetchSpellSpellBooks()
+    // this.props.fetchSpellBooks(token)
+    // this.props.fetchSpellSpellBooks(token)
   }
 
   logOutHandler = () => {
@@ -49,4 +48,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {tokenCheck, logoutUser, fetchSpellSpellBooks})(App)
+export default connect(mapStateToProps, {tokenCheck, logoutUser})(App)

@@ -26,17 +26,17 @@ class AddSpellToSpellBook extends Component {
 
   render() {
     
-    const userSpellBooks = (this.props.spell_books) ? this.props.spell_books.filter(book => book.user_id === this.props.user.id) : null
+    // const userSpellBooks = (this.props.spell_books) ? this.props.spell_books.filter(book => book.user_id === this.props.user.id) : null
 
     return (
       <div className="container mt-3">
-      {(userSpellBooks) ? 
+      {(this.props.spell_books === []) ? 
         <>
           <div className="d-flex justify-content-around">
             
             <select className="p-1" name="spell_book" id="spell_book" onChange={this.handleChange}>
               <option value="none" selected disabled hidden>Select Spell Book</option>
-              {userSpellBooks.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
+              {this.props.spell_books.map(book => <option value={book.id} key={book.id}>{book.title}</option>)}
             </select>
             
             <button type="Submit" className="p-1 form-btn" onClick={this.handleClick}>+ Spell to Spellbook</button>

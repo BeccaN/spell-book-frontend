@@ -3,7 +3,9 @@ export const tokenCheck = (token) => {
     if (token) {
       fetch("http://localhost:8000/api/v1/profile", {
         method: "GET",
-        headers: {Authorization: `Bearer ${token}`},
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
       })
       .then ((resp) => resp.json())
       .then ((data) => {
