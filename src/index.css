@@ -95,7 +95,7 @@ code {
   transform: translateY(3px)
 }
 
-input {
+.login-signup input {
   border-style: solid;
   border-color: black;
   width: 250px;
@@ -145,4 +145,8 @@ hr.solid {
 
 .error {
   color: #d84a45;
+}
+
+.spell-table {
+  padding: 5px;
 }

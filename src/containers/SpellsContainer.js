@@ -26,7 +26,7 @@ class SpellsContainer extends Component {
 
   render() {
     return (
-      <div className="row m-3">
+      <div className="m-1 row">
         <div className='styled-con col-md p-3 m-2 bg-light h-100'>
           {this.state.selectedSpell != null ? (
             <>
@@ -61,7 +61,7 @@ class SpellsContainer extends Component {
           ) : null}
         </div>
         
-        <div className='styled-con col-md p-3 m-2 bg-light'>
+        <div className='styled-con col-md m-2 bg-light spell-table'>
           {this.props.spells.length === 0 ? (
               null                
               ) : <SpellTable spells={this.props.spells} handleSelect={this.handleSelect} />
