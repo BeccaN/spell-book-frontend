@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 class SpellBookContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchSpellBooks()
+    this.props.fetchSpellBooks(localStorage.getItem("token"))
   }
 
   render() {
